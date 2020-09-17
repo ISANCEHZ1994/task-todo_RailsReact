@@ -21,3 +21,5 @@ list1 = List.create({
 joiner = ListTaskJoiner.create({
     list_id: list1.id, task_id: task1.id
 })
+
+puts 'we seeded!!'
