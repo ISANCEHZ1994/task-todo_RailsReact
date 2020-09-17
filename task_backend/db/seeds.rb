@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user1 = User.create({
-#     name: 'Israel Sanchez', email: 'Fakemail@Fakers.com'
-# })
+user1 = User.create({
+    name: 'Israel Sanchez', email: 'Fakemail@Fakers.com'
+})
 
-# list1 = List.create({
-#     title: 'Gym'
-# })
+list1 = List.create({
+    title: 'Gym', user_id: user1.id
+})
 
-#  task1 = Task.create({
-#     description: 'Work out back and shoulders using dumbells and bar'
-# })
+ task1 = Task.create({
+    description: 'Work out back and shoulders using dumbells and bar'
+})
 
-# joiner = ListTaskJoiner.create({
-
-# })
+joiner = ListTaskJoiner.create({
+    list_id: list1.id, task_id: task1.id
+})
