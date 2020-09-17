@@ -1,4 +1,4 @@
 class ListTaskJoiner < ApplicationRecord
-    belongs_to: list
-    belongs_to: task
+    belongs_to :list
+    belongs_to :task
 end

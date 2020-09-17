@@ -1,0 +1,3 @@
+class ListTaskJoinersController < ApplicationController
+    
+end
