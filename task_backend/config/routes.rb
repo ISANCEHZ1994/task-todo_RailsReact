@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :tasks
   resources :users
   resources :lists
-  resources :list_task_joiners
+  # resources :list_task_joiners
+
 end
