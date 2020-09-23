@@ -1,4 +1,4 @@
 class User < ApplicationRecord
     has_many :lists
-    has_many :list_task_joiners, through: :lists 
+    has_many :tasks, through: :lists 
 end
