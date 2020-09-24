@@ -26,7 +26,6 @@ export default class Main extends React.Component{
         return(
             <div> 
                 <User/>
-                Here is the main Component //Maybe Style?
                 <Todolist users={this.state.users}/>
             </div>
         )
