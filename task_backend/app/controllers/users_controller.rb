@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    
+    skip_before_action :verify_authenticity_token
 
     def index
         users = User.all
@@ -14,6 +16,12 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def update
+        user = User.find_by_id (params[:id])
+        user.update(lists: params[:title], tasks: params[:description])
+    end
+
+    private
     def user_params
         # params.require(:client).permit(:name, :email, :password, :phone_number)
         params.require(:user).permit(:name, :email)

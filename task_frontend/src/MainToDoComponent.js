@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './User';
+import UserForm from './UserForm';
 import Todolist from './TodoList';
 
 const usersURL = 'http://localhost:3000/users'
@@ -25,7 +25,7 @@ export default class Main extends React.Component{
         // console.log(this.state.users)
         return(
             <div> 
-                <User/>
+                <UserForm/>
                 <Todolist users={this.state.users}/>
             </div>
         )

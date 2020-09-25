@@ -17,6 +17,7 @@ function Todo(props){
             <h2>{props.title}</h2>
             <p> {props.todo} </p>
             
+            
         </div>
     )
 };
