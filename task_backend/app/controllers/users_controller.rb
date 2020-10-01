@@ -16,6 +16,10 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def edit
+       user = User.find_by_id (params[:id])
+    end
+
     def update
         user = User.find_by_id (params[:id])
         user.update(lists: params[:title], tasks: params[:description])
@@ -26,5 +30,9 @@ class UsersController < ApplicationController
         # params.require(:client).permit(:name, :email, :password, :phone_number)
         params.require(:user).permit(:name, :email)
     end
+
+    # def user_update
+        
+    # end
 
 end

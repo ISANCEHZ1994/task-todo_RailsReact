@@ -9,6 +9,10 @@ class ListsController < ApplicationController
         list = List.create(list_params)
     end
 
+    def edit
+       
+    end
+
     def update
         list = List.find_by_id (params[:id])
         list.update(lists: params[:title])
