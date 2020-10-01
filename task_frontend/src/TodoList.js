@@ -10,6 +10,7 @@ export default class Todolist extends React.Component{
             <div>
                 {this.props.users.map( user => 
                 <Todo
+                id={user.id}
                 key={user.id}
                 name={user.name}
                 title={user.lists.map( title => title.title)}

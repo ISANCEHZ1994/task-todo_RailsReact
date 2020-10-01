@@ -13,16 +13,17 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by_id (params[:id])
-        render json: user
+        render json: user, methods: [ :lists, :tasks ]
     end
 
-    def edit
-       user = User.find_by_id (params[:id])
-    end
+    # def edit
+    #    user = User.find_by_id (params[:id])
+    # end
 
     def update
         user = User.find_by_id (params[:id])
         user.update(lists: params[:title], tasks: params[:description])
+        render json: user, methods: [ :lists, :tasks ]
     end
 
     private

@@ -34,7 +34,7 @@ export default class UserForm extends React.Component{
         const value = e.target.value
         this.setState({
             ...this.state,
-            [e.target.name]: value // note: e.target.name will use the name of the inputs used inside the Form Component
+            [e.target.name]: value // note: e.target.name will use the name of the inputs used inside the form
         })
     }
 
@@ -45,13 +45,14 @@ export default class UserForm extends React.Component{
 
         return(
 
-            <div style={{textAlign:'center'}}>
+            <div >
+                <br></br>
                 <form  onSubmit={ (e) => this.createNewUser(e)}>
                     <label>
                         Name:
                         <input type="text" name="name" onChange={(e) => this.handleChange(e)}/>
                     </label>
-                    <br/>
+                    
                     <label>
                         Email:
                         <input type="text" name='email' onChange={(e) => this.handleChange(e)}/>
