@@ -6,7 +6,6 @@ export default class Todo extends React.Component{
 
     state={
         show: false,
-        
     };
 
     handleEditForm = () => {
@@ -14,10 +13,6 @@ export default class Todo extends React.Component{
             show: !this.state.show
         })
     };
-
-    // handleId = () => {
-        
-    // };
 
     editFromContainer = () => {
         if( this.state.show === true){

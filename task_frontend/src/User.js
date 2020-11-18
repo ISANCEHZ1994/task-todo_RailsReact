@@ -25,7 +25,7 @@ export default class User extends React.Component{
         }else{
             return(
                 <div>
-                    <UserCheck/>
+                    <UserCheck passingUsers={this.props.users}/>
                 </div>
             )
         }
