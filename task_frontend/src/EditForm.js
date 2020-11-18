@@ -48,7 +48,7 @@ export default class Edit extends React.Component{
     };
 
     async updateTask(e) {
-        e.preventDefault()
+        e.persist()
 
         const newTask = this.state.task
 

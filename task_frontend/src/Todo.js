@@ -1,10 +1,12 @@
 import React from 'react';
 import EditForm from './EditForm';
+// import User from './User';
 
 export default class Todo extends React.Component{
 
     state={
-        show: false
+        show: false,
+        
     };
 
     handleEditForm = () => {
@@ -13,9 +15,9 @@ export default class Todo extends React.Component{
         })
     };
 
-    handleId = () => {
+    // handleId = () => {
         
-    };
+    // };
 
     editFromContainer = () => {
         if( this.state.show === true){
@@ -29,14 +31,15 @@ export default class Todo extends React.Component{
                     />
                 </div>
             )
-        }
-    }
+        };
+    };
 
     render(){
 
         return(
 
             <div>
+                {/* <User/> */}
                 <h1> {this.props.name} </h1>
                 <h2>{this.props.title}</h2>
                 <p> {this.props.todo} </p>

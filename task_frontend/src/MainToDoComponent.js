@@ -1,14 +1,16 @@
 import React from 'react';
-import UserForm from './UserForm';
+// import UserForm from './UserForm';
 import Todolist from './TodoList';
+import User from './User';
 
 const usersURL = 'http://localhost:3000/users'
 
 export default class Main extends React.Component{
 
     state={
-        users: []
-    }
+        users: [],
+        // setUser: []
+    };
     // NOTE: List and Tasks are arrays!!
 
     componentDidMount(){
@@ -25,8 +27,9 @@ export default class Main extends React.Component{
         // console.log(this.state.users)
         return(
             <div> 
-                <UserForm/>
-                <Todolist users={this.state.users}/>
+                <User users={this.state.users}/>
+                {/* <UserForm/> */}
+                 <Todolist users={this.state.users} />   {/*specificUser={this.props.setUser}*/}
             </div>
         )
     }

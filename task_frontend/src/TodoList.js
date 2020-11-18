@@ -2,6 +2,9 @@ import React from 'react';
 import Todo from './Todo';
 
 export default class Todolist extends React.Component{
+
+    
+
     
     render(){
         
@@ -13,6 +16,7 @@ export default class Todolist extends React.Component{
                 <Todo
                 id={user.id}
                 key={user.id}
+                // setUser={this.props.specificUser}
                 name={user.name}
                 titleId={user.lists.map( title => title.id)}
                 title={user.lists.map( title => title.title)}
