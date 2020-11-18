@@ -1,11 +1,12 @@
 import React from 'react';
+import UserCheck from './UserCheck';
 import UserForm from './UserForm';
 
 export default class User extends React.Component{
 
     state={
         showForm: false,
-        setUser: []
+        setUser: [],
     };
 
     handleFormButton = () => {
@@ -21,18 +22,23 @@ export default class User extends React.Component{
                     <UserForm/>
                 </div>
             )
+        }else{
+            return(
+                <div>
+                    <UserCheck/>
+                </div>
+            )
         }
     };
  
     render(){
         return(
             <div>
-               <h1> Please Select One! </h1>
-               <button onClick={this.handleFormButton}> New User? </button>
-               <button > Been Here Before?</button>
+               <h1> Create A Todo List </h1>
+               <h3> Type In Your Name & Email Below!</h3>
                {this.handleShowUserForm()}
+               <button onClick={this.handleFormButton}> New User? </button>
                <br></br>
-                here I want to CHECK if there is already a user or use the new one
             </div>
         )
     }

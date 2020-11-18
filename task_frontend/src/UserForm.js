@@ -49,12 +49,12 @@ export default class UserForm extends React.Component{
                 <br></br>
                 <form  onSubmit={ (e) => this.createNewUser(e)}>
                     <label>
-                        Name:
+                        New Name:
                         <input type="text" name="name" onChange={(e) => this.handleChange(e)}/>
                     </label>
                     
                     <label>
-                        Email:
+                        New Email:
                         <input type="text" name='email' onChange={(e) => this.handleChange(e)}/>
                     </label>
                     <input type="submit" value="Create New User" /> {/* when this is pressed a new user is created with ONLY their todo list showing */}
