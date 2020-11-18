@@ -22,14 +22,17 @@ export default class Todo extends React.Component{
             return(
                 <div>
                     <br></br>
-                    <EditForm id={this.props.id}/>
+                    <EditForm 
+                    id={this.props.id}
+                    titleId={this.props.titleId}
+                    taskId={this.props.todoId}
+                    />
                 </div>
             )
         }
     }
 
     render(){
-
 
         return(
 

@@ -20,7 +20,7 @@ module TaskBackend
         origins '*'
         resource '*',
           headers: :any,
-          methods: [:get, :post, :patch, :delete] # %i(get post put patch delete options head) 
+          methods: [:get, :post, :patch, :delete, :put] # %i(get post put patch delete options head) 
       end
     end
   end

@@ -21,8 +21,9 @@ class UsersController < ApplicationController
     # end
 
     def update
-        user = User.find_by_id (params[:id])
-        user.update(lists: params[:title], tasks: params[:description])
+        user = User.find_by_id(params[:id])
+        # byebug
+        # user.update(lists: params[:title], tasks: params[:description])
         render json: user, methods: [ :lists, :tasks ]
     end
 

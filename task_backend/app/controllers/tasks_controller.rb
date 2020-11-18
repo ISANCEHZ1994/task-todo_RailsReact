@@ -18,7 +18,9 @@ class TasksController < ApplicationController
 
     def update
         task = Task.find_by_id (params[:id])
-        task.update(tasks: params[:description])
+        # byebug
+        task.update(task_params)
+        render json: task
     end
 
     private

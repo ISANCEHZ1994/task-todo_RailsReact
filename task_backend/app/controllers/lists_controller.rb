@@ -1,21 +1,27 @@
 class ListsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
     def index
         lists = List.all
         render json: lists
     end
+
+    def show
+        list = List.find_by_id (params[:id])
+        render json: list
+    end
     
     def create
         list = List.create(list_params)
+        
     end
-
-    # def edit
-       
-    # end
 
     def update
         list = List.find_by_id (params[:id])
-        list.update(lists: params[:title])
+        # byebug
+        list.update(list_params)
+        render json: list
     end
 
     private

@@ -1,19 +1,15 @@
 import React from 'react';
 
-// const titleURL = 'http://localhost:3000/lists/'
-// const taskURl = 'http://localhost:3000/tasks/'
-const usersURL = 'http://localhost:3000/users/'
-
+const titleURL = 'http://localhost:3000/lists/'
+const taskURl = 'http://localhost:3000/tasks/'
 
 export default class Edit extends React.Component{
 
     state={
-
         title: '',
         task:'',
         result: '',
-
-
+        result2: ''
     }
    
     handleChange = (e) => { 
@@ -24,22 +20,23 @@ export default class Edit extends React.Component{
         })
     }
 
-    async updateTitle(e, id){
+    async updateTitle(e){
         e.preventDefault()
         
         const newTitle = this.state.title
         
-        const response = await fetch( usersURL + id ,{
+        const response = await fetch( titleURL + this.props.titleId ,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'Application/json'
             },
             body: JSON.stringify({
-                lists: newTitle
+                title: newTitle
             })
         })
         if( response.status === 200 ){ // this is a status code - successful request
             const data = await response.json()
+            console.log(data)
              this.setState({
                  result: data
              })
@@ -50,22 +47,49 @@ export default class Edit extends React.Component{
         // .then( updatedTitle => console.log(updatedTitle))
     };
 
-    // updateTask = (e) => {
-    //     e.preventDefault()
-    //     const newTask = this.state.task
-    // };
+    async updateTask(e) {
+        e.preventDefault()
 
-    // async handleSubmit(e){
-    //     e.preventDefault()
-    // };
+        const newTask = this.state.task
+
+        const response = await fetch( taskURl + this.props.taskId ,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'Application/json'
+            },
+            body: JSON.stringify({
+                description: newTask
+            })
+        })
+        if( response.status === 200 ){  // this is a status code - successful request
+            const data = await response.json()
+            console.log(data)
+             this.setState({
+                 result2: data
+             })
+        }else{
+            console.log(response)
+        }
+    };
+
+    async handleSubmit(e){
+        e.preventDefault()
+        // const title = this.state.result
+        // const task = this.state.result2
+        
+        await this.updateTitle(e)
+        await this.updateTask(e)
+    };
 
     render(){
         
-        console.log(this.props.id)
+        // console.log(this.props.id)
+        // console.log(this.props.titleId)
+        // console.log(this.props.taskId)
 
         return(
             <div>
-                <form onSubmit={(e) => this.updateTitle(e)}>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
                     <label>
                         Title:
                         <input type='text' name='title' placeholder='Update Title' onChange={(e) => this.handleChange(e)}></input>
